@@ -1,4 +1,3 @@
-@"
 FROM node:14-alpine AS build
 
 WORKDIR /app
@@ -17,4 +16,3 @@ COPY --from=build /app/node_modules/aframe/dist/aframe-master.min.js /usr/share/
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
-"@ | Out-File -FilePath Dockerfile -Encoding utf8

@@ -1,4 +1,4 @@
-@"
+
 document.addEventListener('DOMContentLoaded', function() {
     const moon = document.querySelector('#moon');
     const africa = document.querySelector('#africa');
@@ -22,4 +22,3 @@ document.addEventListener('DOMContentLoaded', function() {
         rotationSpeed = rotationSpeed === 0 ? 0.2 : 0;
     });
 });
-"@ | Out-File -FilePath src\script.js -Encoding utf8
