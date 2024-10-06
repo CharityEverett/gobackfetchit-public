@@ -1,28 +1,24 @@
-@"
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Africa Moon Visualization</title>
-    <script src="../node_modules/aframe/dist/aframe-master.min.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <a-scene>
         <a-assets>
-            <img id="moonTexture" src="https://cdn.glitch.com/42d1e73c-d371-4208-87ef-26757f5d48c5%2Fmoon.jpg?1554054191878" crossorigin="anonymous">
-            <img id="africaTexture" src="https://cdn.glitch.com/42d1e73c-d371-4208-87ef-26757f5d48c5%2Fafrica.png?1554054191531" crossorigin="anonymous">
+            <img id="moonTexture" src="assets/moon.jpg" crossorigin="anonymous">
+            <img id="africaTexture" src="assets/africa.png" crossorigin="anonymous">
         </a-assets>
-
         <a-entity id="rig" position="0 1.6 0">
             <a-camera></a-camera>
         </a-entity>
-
         <a-sphere id="moon" radius="2" src="#moonTexture" position="0 1.6 -5"></a-sphere>
         <a-entity id="africa" geometry="primitive: plane; width: 2; height: 2" material="src: #africaTexture; transparent: true" position="0 1.6 -4.9"></a-entity>
     </a-scene>
     <script src="script.js"></script>
 </body>
 </html>
-"@ | Out-File -FilePath src\index.html -Encoding utf8

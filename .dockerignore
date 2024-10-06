@@ -1,4 +1,2 @@
-@"
 node_modules
 npm-debug.log
-"@ | Out-File -FilePath .dockerignore -Encoding utf8
