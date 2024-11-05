@@ -8,30 +8,7 @@
     <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
     <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
-    <script>
-      AFRAME.registerComponent("change-scene", {
-        schema: {
-          sceneUrl: { type: "string", default: "" }
-        },
-        init: function () {
-          var el = this.el;
-          var data = this.data;
-          
-          el.addEventListener("click", function () {
-            if (data.sceneUrl) {
-              window.location.href = data.sceneUrl;
-            }
-          });
-
-          el.addEventListener("collide", function (e) {
-            if (data.sceneUrl) {
-              window.location.href = data.sceneUrl;
-            }
-          });
-        }
-      });
-    </script>
-  </head>
+     </head>
   <body>
     <a-scene embedded physics="debug: true" style="height: 100vh; width: 100vw">
       <a-assets>
@@ -50,6 +27,8 @@
   <img id="viz1" src="assets/TrueSize.png">
   <gif id="viz2" src="assets/ARDAnceViz.gif">
   <img id="viz3" src="assets/Timeline.png">
+  <img id="viz4" src="assets/Arrow.png">
+
          
   <video id="video1" src="assets/video1.mp4"></video>
   <video id="video2" src="assets/video2.mp4"></video>
@@ -84,15 +63,17 @@
 <a-box position="0 -2.5 0" rotation="90 0 0" width="10" height="40" depth="0.1" color="#FFFFFF"></a-box>
 <a-box position="0 2.5 0" rotation="90 0 0" width="10" height="40" depth="0.1" color="#FFFFFF"></a-box>
       </a-entity>
-      <!-- Images on Cave Walls -->
-      <a-image src="#text1" position="-4.9 2 -8" rotation="0 90 0" width="4" height="2"></a-image>
-<a-image src="#text2" position="-4.9 2 -4" rotation="0 90 0" width="4" height="2"></a-image>
-<a-image src="#text3" position="-4.9 2 0" rotation="0 90 0" width="4" height="2"></a-image>
-<a-image src="#text4" position="-4.9 2 4" rotation="0 90 0" width="4" height="2"></a-image>
-<a-image src="#text5" position="-4.9 2 8" rotation="0 90 0" width="4" height="2"></a-image>
+<!-- Images on Cave Walls -->
+<a-image src="#text1" position="-4.9 2 -8" rotation="0 90 0" width="4" height="2"></a-image>
+<a-image src="#text2" position="-4.9 2 -4" rotation="0 90 0" width="4" height="4"></a-image>
+<a-image src="#text3" position="-4.9 2 0" rotation="0 90 0" width="4" height="4"></a-image>
+<a-image src="#text4" position="-4.9 2 4" rotation="0 90 0" width="4" height="4"></a-image>
+<a-image src="#text5" position="-4.9 2 8" rotation="0 90 0" width="4" height="4"></a-image>
+<a-image src="#text6" position="-4.9 2 12" rotation="0 90 0" width="4" height="4"></a-image>
+<a-image src="#text7" position="-4.9 2 16" rotation="0 90 0" width="4" height="4"></a-image>
+<a-image src="#text8" position="-4.9 2 20" rotation="0 90 0" width="4" height="4"></a-image>
 
-
-    <!-- Videos on Cave Walls -->
+   <!-- Videos on Cave Walls -->
 <a-video src="#text1" position="-4.9 2 -8" rotation="0 90 0" width="4" height="2"></a-video>
       
     </a-scene>
