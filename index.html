@@ -47,7 +47,7 @@
 
       <!-- Camera Rig -->
       <a-entity id="rig" position="0 1.6 0" rotation="0 0 0">
-        <a-entity camera look-controls wasd-controls="acceleration: 65">
+        <a-entity camera look-controls wasd-controls="acceleration: 65"; constrainToNavMesh: true;">
           <a-cursor
             raycaster="objects: .clickable"
             animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
@@ -60,10 +60,10 @@
       
 <!-- Cave Walls -->
       <a-entity>
-<a-box position="-8 0 0" rotation="0 90 0" width="40" height="5" depth="0.1" color="#FFFFFF"></a-box>
-<a-box position="8 0 0" rotation="0 90 0" width="40" height="5" depth="0.1" color="#404040"></a-box>
-<a-box position="0 -2.5 0" rotation="90 0 0" width="16" height="40" depth="0.1" color="#606060"></a-box>
-<a-box position="0 2.5 0" rotation="90 0 0" width="16" height="40" depth="0.1" color="#707070"></a-box>
+<a-box position="-8 0 0" rotation="0 90 0" width="40" height="5" depth="0.1" color="#FFFFFF" static-body></a-box>
+<a-box position="8 0 0" rotation="0 90 0" width="40" height="5" depth="0.1" color="#404040" static-body></a-box>
+<a-box position="0 -2.5 0" rotation="90 0 0" width="16" height="40" depth="0.1" color="#606060" static-body></a-box>
+<a-box position="0 2.5 0" rotation="90 0 0" width="16" height="40" depth="0.1" color="#707070" static-body></a-box>
       </a-entity>
       
 <!-- Images on Cave Walls -->
