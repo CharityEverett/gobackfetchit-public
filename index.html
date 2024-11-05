@@ -7,8 +7,8 @@
     <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
     <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
     <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
+    
     <script>
   AFRAME.registerComponent('nav-mesh-link', {
     init: function () {
@@ -83,8 +83,8 @@
       </a-entity>
       
 <!-- Navigation Mesh -->
-<a-box id="navmesh" position="0 -2.45 10" width="15.8" height="0.1" depth="39.8" visible="false" nav-mesh></a-box>
-      
+<a-entity id="navmesh" nav-mesh-geometry="primitive: box; width: 15.8; height: 0.1; depth: 39.8;" position="0 -2.45 10" visible="false"></a-entity>      
+
 <!-- Images on Cave Walls -->
 <a-image src="#text1" position="-7.9 1.5 -8" rotation="0 90 0" width="3.5" height="1.75"></a-image>
 <a-image src="#text2" position="-7.9 1.5 -4" rotation="0 90 0" width="3.5" height="1.75"></a-image>
