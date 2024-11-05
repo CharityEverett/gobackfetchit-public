@@ -45,7 +45,7 @@
       </a-assets>
 
       <!-- Environment -->
-      <a-sky src="#sky"></a-sky>
+      <a-sky color="#FFFFFF"></a-sky>
       <a-plane src="#floor" rotation="-90 0 0" width="30" height="30"></a-plane>
 
       <!-- Ambient Light -->
@@ -78,7 +78,6 @@
   event-set__mouseleave="scale: 1 1 1"
   position="5 1.5 0"
   rotation="0 -90 0"
-  change-scene="sceneUrl: ./roleprompt.html"
   static-body>
 </a-entity>
 
@@ -89,7 +88,6 @@
   position="5 4 0"
   rotation="0 -90 0"
   animation="property: position; to: 5 4.2 0; dir: alternate; dur: 1000; loop: true"
-  change-scene="sceneUrl: ./roleprompt.html"
   static-body>
 </a-entity>
 
@@ -101,7 +99,6 @@
   event-set__mouseenter="scale: 1.1 1.1 1"
   event-set__mouseleave="scale: 1 1 1"
   position="0 1.5 -5"
-  change-scene="sceneUrl: ./microservices.html"
   static-body>
 </a-entity>
 <a-entity
@@ -110,7 +107,6 @@
   material="src: #clickmicroservice"
   position="0 4 -5"
   animation="property: position; to: 0 4.2 -5; dir: alternate; dur: 1000; loop: true"
-  change-scene="sceneUrl: ./microservices.html"
   static-body>
 </a-entity>
       
@@ -123,7 +119,6 @@
           event-set__mouseleave="scale: 1 1 1"
           position="0 1.5 5"
           rotation="0 180 0"
-          change-scene="sceneUrl: ./roleprompt.html"
           static-body>
         </a-entity>
         <a-entity
@@ -133,7 +128,6 @@
           position="0 4 5"
           rotation="0 180 0"
           animation="property: position; to: 0 4.2 5; dir: alternate; dur: 1000; loop: true"
-          change-scene="sceneUrl: ./roleprompt.html"
           static-body>
         </a-entity>
 
@@ -146,7 +140,6 @@
           event-set__mouseleave="scale: 1 1 1"
           position="-5 1.5 0"
           rotation="0 90 0"
-          change-scene="sceneUrl: ./responsive-design.html"
           static-body>
         </a-entity>
         <a-entity
@@ -156,7 +149,6 @@
           position="-5 4 0"
           rotation="0 90 0"
           animation="property: position; to: -5 4.2 0; dir: alternate; dur: 1000; loop: true"
-          change-scene="sceneUrl: ./responsive-design.html"
           static-body>
         </a-entity>
         <a-text
