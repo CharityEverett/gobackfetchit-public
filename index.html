@@ -28,6 +28,7 @@
   <body>
     <a-scene embedded physics="debug: true" style="height: 100vh; width: 100vw">
       <a-assets>
+    <a-assets timeout="10000">   
        <a-assets>
   <img id="text1" src="assets/virtual.png">
   <img id="text2" src="assets/DownloadApp.png">
@@ -50,18 +51,17 @@
          
   <video id="video1" src="assets/Promo1.mp4"></video>
   <video id="video2" src="assets/ICAVideo.mp4"></video>
-  <video id="video3" src="assets/IPrologueBuild.mp4"></video>
+  <video id="video3" src="assets/PrologueBuild.mp4"></video>
   <video id="video4" src="assets/WoodCaveVideo.mp4"></video>
 
-
-
-    
+ </a-assets>   
 </a-assets>
       </a-assets>
+   
 
       <!-- Environment -->
       <a-sky color="#FFFFFF"></a-sky>
-      <a-plane src="#floor" rotation="-90 0 0" width="30" height="30"></a-plane>
+      <a-plane color="FFFFFF" rotation="-90 0 0" width="30" height="30"></a-plane>
 
       <!-- Ambient Light -->
       <a-light type="ambient" color="#BBB"></a-light>
@@ -114,20 +114,6 @@
 
 
 
-<script>
-  AFRAME.registerComponent('nav-mesh-link', {
-    init: function () {
-      var el = this.el;
-      var navmesh = document.querySelector('#navmesh');
-      el.setAttribute('movement-controls', {
-        constrainToNavMesh: true,
-        speed: 0.1
-      });
-      navmesh.setAttribute('nav-mesh', {});
-    }
-  });
-  document.querySelector('#rig').setAttribute('nav-mesh-link', '');
-</script>
     </a-scene>
   </body>
 </html>
