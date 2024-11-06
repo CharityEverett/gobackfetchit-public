@@ -99,7 +99,21 @@
    <!-- Videos on Cave Walls -->
 <a-video src="#video1" width="3.5" height="1.97" position="-7.9 1.5 24" rotation="0 90 0"></a-video>
 <a-video src="#video2" width="3.5" height="1.97" position="-7.9 1.5 28" rotation="0 90 0"></a-video>
-      
+
+<script>
+  AFRAME.registerComponent('nav-mesh-link', {
+    init: function () {
+      var el = this.el;
+      var navmesh = document.querySelector('#navmesh');
+      el.setAttribute('movement-controls', {
+        constrainToNavMesh: true,
+        speed: 0.1
+      });
+      navmesh.setAttribute('nav-mesh', {});
+    }
+  });
+  document.querySelector('#rig').setAttribute('nav-mesh-link', '');
+</script>
     </a-scene>
   </body>
 </html>
