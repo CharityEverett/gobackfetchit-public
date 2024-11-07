@@ -66,14 +66,22 @@
       <a-light type="directional" color="#FFF" intensity="0.6" position="-0.5 1 1"></a-light>
 
     
+ <a-entity>
       
 <!-- Cave Walls -->
-      <a-entity>
 <a-box position="-8 0 20" rotation="0 90 0" width="80" height="5" depth="0.1" color="#FFFFFF" static-body></a-box>
 <a-box position="8 0 20" rotation="0 90 0" width="80" height="5" depth="0.1" color="#FFFFFF" static-body></a-box>
 <a-box position="0 -2.5 20" rotation="90 0 0" width="16" height="80" depth="0.1" color="#FFFFFF" static-body></a-box>
 <a-box position="0 2.5 20" rotation="90 0 0" width="16" height="80" depth="0.1" color="#FFFFFF" static-body></a-box>
-      </a-entity>
+      
+  <!-- Start of the cave (entrance) -->
+  <a-plane position="0 0 -20" rotation="0 0 0" width="16" height="5" color="#D3D3D3" static-body></a-plane>
+
+  <!-- End of the cave -->
+  <a-plane position="0 0 60" rotation="0 180 0" width="16" height="5" color="#D3D3D3" static-body></a-plane>
+
+  </a-entity>
+
       
 <!-- Navigation Mesh -->
 <a-entity id="navmesh" nav-mesh-geometry="primitive: box; width: 15.8; height: 0.1; depth: 79.8;" position="0 -2.45 20" visible="false"></a-entity>
