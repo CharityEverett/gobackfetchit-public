@@ -58,6 +58,7 @@
 </script>
 
     <script>
+      
   AFRAME.registerComponent('custom-loading', {
     init: function () {
       var sceneEl = this.el;
@@ -75,12 +76,13 @@
     
      </head>
   <body>
-    <body>
+   <body>
   <div id="custom-loader">
-    <img id="loading-gif" src="path/to/your/loading-gif.gif" alt="Loading...">
-    <div class="a-loader-title">Loading Your Cave Experience...</div>
+    <img id="loading-gif" src="loading-gif" alt="Loading...">
+    <div class="a-loader-title">Please wait while we...</div>
   </div>
 
+  <a-scene loading-screen="dotsColor: black; backgroundColor: white" embedded>
 
 </body>
     <a-scene embedded physics="debug: true" style="height: 100vh; width: 100vw">
