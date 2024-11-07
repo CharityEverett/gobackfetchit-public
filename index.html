@@ -72,19 +72,8 @@
 <a-box position="-8 0 20" rotation="0 90 0" width="80" height="5" depth="0.1" color="#FFFFFF" static-body></a-box>
 <a-box position="8 0 20" rotation="0 90 0" width="80" height="5" depth="0.1" color="#FFFFFF" static-body></a-box>
 <a-box position="0 -2.5 20" rotation="90 0 0" width="16" height="80" depth="0.1" color="#FFFFFF" static-body></a-box>
-
-<!-- Cave Ceiling -->
-<a-entity id="cave-ceiling" position="0 2.5 20">
-  
-  <!-- Center arch -->
-  <a-entity geometry="primitive: cylinder; openEnded: true; thetaStart: 0; thetaLength: 180; radius: 8; height: 80; segmentsRadial: 6; segmentsHeight: 40" material="side: double; color: #444444; roughness: 1" rotation="90 0 0" scale="1 1 0.3"></a-entity>
-  
-  <!-- Left side fill -->
-  <a-box position="-6 1.2 0" width="4" height="80" depth="2.4" color="#444444"></a-box>
-  
-  <!-- Right side fill -->
-  <a-box position="6 1.2 0" width="4" height="80" depth="2.4" color="#444444"></a-box>
-     
+<a-box position="0 2.5 20" rotation="90 0 0" width="16" height="80" depth="0.1" color="#FFFFFF" static-body></a-box>
+      
   <!-- Start of the cave (entrance) -->
   <a-plane position="0 0 -20" rotation="0 0 0" width="16" height="5" color="#D3D3D3" static-body></a-plane>
 
