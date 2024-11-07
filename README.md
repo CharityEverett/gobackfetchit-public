@@ -4,4 +4,5 @@ This project was one of the first AR storytelling experiences created, started b
 
 
 ![Alt text](https://github.com/CharityEverett/gobackfetchit/blob/d7fce3415156db2082dccb2bc749b49ca163c403/ODL%20Logo.png)
-![Alt text](https://github.com/CharityEverett/gobackfetchit/blob/51bd360c55d35343312ce57f91db8893863d5161/Cambridge%20Arts%20Council%20Logo.jpeg)
+![Alt text](https://github.com/CharityEverett/gobackfetchit/blob/0c07ae921d39770233fd3453d879036f3059f53c/assets/CALogo.png)
+![Alt text]([https://github.com/CharityEverett/gobackfetchit/blob/0c07ae921d39770233fd3453d879036f3059f53c/assets/CALogo.png](https://github.com/CharityEverett/gobackfetchit/blob/0c07ae921d39770233fd3453d879036f3059f53c/assets/MassCulturalCouncil.png))
