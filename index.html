@@ -10,13 +10,15 @@
     <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
 
     <!-- Preload Screen -->
-    <link rel="preload" href="path/to/ArialRoundedMTBold.woff2" as="font" type="font/woff2" crossorigin>
-
+<link rel="preload" href="assets/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin>
     <!-- Style Tag -->
     <style>
-    @font-face {
-      font-family: 'Arial Rounded MT Bold'; src: url('path/to/ArialRoundedMTBold.woff2') format('woff2'), url('path/to/ArialRoundedMTBold.woff') format('woff'); font-weight: bold; font-style: normal;
-    }
+        @font-face {
+            font-family: 'Varela Round';
+            src: url('assets/VarelaRound-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
       
     .a-loader-title { font-family: 'Arial Rounded MT Bold', Arial, sans-serif; color: white; font-size: 24px;
     }
@@ -75,10 +77,13 @@
    <body>
   <div id="custom-loader">
     <img id="loading-gif" src="loading-gif" alt="Loading...">
+    <a-text value="Please wait while we..." font="Varela Round" color="#000000" position="0 1.5 -3"></a-text>
     <div class="a-loader-title">Please wait while we...</div>
   </div>
 
   <a-scene loading-screen="dotsColor: black; backgroundColor: white" embedded>
+
+
 
 </body>
     <a-scene embedded physics="debug: true" style="height: 100vh; width: 100vw">
@@ -99,11 +104,15 @@
   <img id="viz1" src="assets/TrueSize.png">
   <img id="viz2" src="assets/Timeline.png">
   <img id="viz3" src="assets/Arrow.png">
-  <img id="viz4" src="assets/InvertMigration.gif">
-  <img id="loading-gif" src="assets/AdamandEve.gif">
-  <video id="video1" src="assets/PrologueFinal"></video>
+  <gif id="viz4" src="assets/InvertMigration.gif">
+  <gif id="loading-gif" src="assets/AdamandEve.gif">
+  <video id="video1" src="assets/PrologueFinal.mp4"></video>
 
-  <link href="assets/ArialRoundedMTBold.woff" rel="preload" as="font" type="font/woff" crossorigin>
+
+<--! Font -->
+<a-asset-item id="varela-round-font" src="assets/VarelaRound-Regular.ttf"></a-asset-item>
+
+</a-assets>
 
  
 
