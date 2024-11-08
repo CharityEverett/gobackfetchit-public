@@ -70,11 +70,7 @@
     }
   });
 
-  // Add this component to your a-scene
-  document.querySelector('a-scene').setAttribute('custom-loading', '');
-</script>
-    
-     </head>
+      </head>
   <body>
    <body>
   <div id="custom-loader">
@@ -125,7 +121,7 @@
       <!-- Directional Light -->
       <a-light type="directional" color="#FFF" intensity="0.6" position="-0.5 1 1"></a-light>
 
-    
+        
  <a-entity>
       
 <!-- Cave Walls -->
@@ -141,7 +137,10 @@
   <a-plane position="0 0 60" rotation="0 180 0" width="16" height="5" color="#D3D3D3" static-body></a-plane>
 
   </a-entity>
-
+        
+<script>
+document.querySelector('a-scene').setAttribute('custom-loading', '');
+</script>
       
 <!-- Navigation Mesh -->
 <a-entity id="navmesh" nav-mesh-geometry="primitive: box; width: 15.8; height: 0.1; depth: 79.8;" position="0 -2.45 20" visible="false"></a-entity>
@@ -178,7 +177,7 @@
 </a-entity>
              </a-entity>
       </a-entity>
-
-    </a-scene>
+              </a-scene>
+    
   </body>
 </html>
