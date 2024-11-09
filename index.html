@@ -9,6 +9,57 @@
     <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
 
+<!-- Define asset load error function -->
+    <script>   
+    function assetLoadError(asset) {
+      console.error('Failed to load asset:', asset.id, asset.src);
+    }
+      
+      AFRAME.registerComponent('scene-setup', {
+            init: function () {
+                var sceneEl = this.el;
+                var loadingScreen = document.getElementById('custom-loader');
+
+                var setupCamera = function() {
+                    var cameraEl = sceneEl.querySelector('[camera]');
+                    if (cameraEl) {
+                        cameraEl.setAttribute('position', '0 1.6 -9');
+                    } else {
+                        console.warn('Camera element not found');
+                    }
+                };
+
+                var hideLoadingScreen = function() {
+                    if (loadingScreen) {
+                        loadingScreen.style.display = 'none';
+                    }
+                };
+
+                if (sceneEl.hasLoaded) {
+                    setupCamera();
+                    hideLoadingScreen();
+                } else {
+                    sceneEl.addEventListener('loaded', function () {
+                        setupCamera();
+                        hideLoadingScreen();
+                    });
+                }
+<script>
+              
+        AFRAME.registerComponent('nav-mesh-link', {
+            init: function () {
+                var el = this.el;
+                var navmesh = document.querySelector('#navmesh');
+                el.setAttribute('movement-controls', {
+                    constrainToNavMesh: true,
+                    speed: 0.1
+                });
+                navmesh.setAttribute('nav-mesh', {});
+            }
+        });
+                    }
+        });
+    </script>
   
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="gif/x-icon">
@@ -58,71 +109,27 @@
         <div class="a-loader-title">Please wait while we...</div>
     </div>
 
-    <script>
-        AFRAME.registerComponent('nav-mesh-link', {
-            init: function () {
-                var el = this.el;
-                var navmesh = document.querySelector('#navmesh');
-                el.setAttribute('movement-controls', {
-                    constrainToNavMesh: true,
-                    speed: 0.1
-                });
-                navmesh.setAttribute('nav-mesh', {});
-            }
-        });
-
-        AFRAME.registerComponent('scene-setup', {
-            init: function () {
-                var sceneEl = this.el;
-                var loadingScreen = document.getElementById('custom-loader');
-
-                var setupCamera = function() {
-                    var cameraEl = sceneEl.querySelector('[camera]');
-                    if (cameraEl) {
-                        cameraEl.setAttribute('position', '0 1.6 -9');
-                    } else {
-                        console.warn('Camera element not found');
-                    }
-                };
-
-                var hideLoadingScreen = function() {
-                    if (loadingScreen) {
-                        loadingScreen.style.display = 'none';
-                    }
-                };
-
-                if (sceneEl.hasLoaded) {
-                    setupCamera();
-                    hideLoadingScreen();
-                } else {
-                    sceneEl.addEventListener('loaded', function () {
-                        setupCamera();
-                        hideLoadingScreen();
-                    });
-                }
-            }
-        });
-    </script>
+    
       
 <a-scene scene-setup loading-screen="enabled: false">
   <a-assets>
-  <img id="text1" src="assets/Virtual.png" crossorigin="anonymous" onerror="assetLoadError(this)">
-  <img id="text2" src="assets/DownloadApp.png" crossorigin="anonymous" onerror="assetLoadError(this)">
-  <img id="text3" src="assets/FollowEve.png" crossorigin="anonymous" onerror="assetLoadError(this)">
-  <img id="text4" src="assets/OnJourney.png" crossorigin="anonymous" onerror="assetLoadError(this)">
-  <img id="text5" src="assets/AncientSymbols.png" crossorigin="anonymous" onerror="assetLoadError(this)">
-  <img id="text6" src="assets/SharedOrigin.png" crossorigin="anonymous" onerror="assetLoadError(this)">
-  <img id="text7" src="assets/ThroughTime.png" crossorigin="anonymous" onerror="assetLoadError(this)">
-  <img id="text8" src="assets/Innovating.png" crossorigin="anonymous" onerror="assetLoadError(this)">
-  <img id="text9" src="assets/Fighting.png" crossorigin="anonymous" onerror="assetLoadError(this)">
-  <img id="text10" src="assets/Surviving.png" crossorigin="anonymous" onerror="assetLoadError(this)">
-  <img id="text11" src="assets/LiveJourney.png" crossorigin="anonymous" onerror="assetLoadError(this)">
-  <img id="viz1" src="assets/TrueSize.png" crossorigin="anonymous" onerror="assetLoadError(this)">
-  <img id="viz2" src="assets/Timeline.png" crossorigin="anonymous" onerror="assetLoadError(this)">
-  <img id="viz3" src="assets/Arrow.png" crossorigin="anonymous" onerror="assetLoadError(this)">
-  <img id="viz4" src="assets/InvertMigration.gif" crossorigin="anonymous" onerror="assetLoadError(this)">
-  <img id="loading-gif" src="assets/AdamandEve.gif" alt="Loading..." crossorigin="anonymous" onerror="assetLoadError(this)">
-  <video id="video1" src="assets/PrologueFinal.mp4" crossorigin="anonymous" onerror="assetLoadError(this)"></video>
+  <img id="text1" src="assets/Virtual.png" crossorigin="anonymous" on="assetLoad(this)">
+  <img id="text2" src="assets/DownloadApp.png" crossorigin="anonymous" on="assetLoad(this)">
+  <img id="text3" src="assets/FollowEve.png" crossorigin="anonymous" on="assetLoad(this)">
+  <img id="text4" src="assets/OnJourney.png" crossorigin="anonymous" on="assetLoad(this)">
+  <img id="text5" src="assets/AncientSymbols.png" crossorigin="anonymous" on="assetLoad(this)">
+  <img id="text6" src="assets/SharedOrigin.png" crossorigin="anonymous" on="assetLoad(this)">
+  <img id="text7" src="assets/ThroughTime.png" crossorigin="anonymous" on="assetLoad(this)">
+  <img id="text8" src="assets/Innovating.png" crossorigin="anonymous" on="assetLoad(this)">
+  <img id="text9" src="assets/Fighting.png" crossorigin="anonymous" on="assetLoad(this)">
+  <img id="text10" src="assets/Surviving.png" crossorigin="anonymous" on="assetLoad(this)">
+  <img id="text11" src="assets/LiveJourney.png" crossorigin="anonymous" on="assetLoad(this)">
+  <img id="viz1" src="assets/TrueSize.png" crossorigin="anonymous" on="assetLoad(this)">
+  <img id="viz2" src="assets/Timeline.png" crossorigin="anonymous" on="assetLoad(this)">
+  <img id="viz3" src="assets/Arrow.png" crossorigin="anonymous" on="assetLoad(this)">
+  <img id="viz4" src="assets/InvertMigration.gif" crossorigin="anonymous" on="assetLoad(this)">
+  <img id="loading-gif" src="assets/AdamandEve.gif" alt="Loading..." crossorigin="anonymous" on="assetLoad(this)">
+  <video id="video1" src="assets/PrologueFinal.mp4" crossorigin="anonymous" on="assetLoad(this)"></video>
 
 
 <!-- Font -->
@@ -144,8 +151,8 @@
 
  
 
- </a-assets>   
-</a-assets>
+   </a-assets>   
+    </a-assets>
       </a-assets>
    
 
