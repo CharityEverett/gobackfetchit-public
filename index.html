@@ -85,13 +85,13 @@
         }
 
         #custom-loader {
+            display: flex;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background-color: white;
-            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -108,30 +108,30 @@
 <body>
     <div id="custom-loader">
         <img id="loading-gif" src="assets/EveandAdam.gif" alt="Loading...">
-        <div class="a-loader-title">Please wait while we...</div>
+        <div class="loading-text">Please wait while we...</div>
     </div>
 
     
       
 <a-scene scene-setup loading-screen="enabled: false" embedded physics="debug: true" style="height: 100vh; width: 100vw">
   <a-assets timeout="10000">
-  <img id="text1" src="assets/Virtual.png" crossorigin="anonymous" on="assetLoadError(this)">
-  <img id="text2" src="assets/DownloadApp.png" crossorigin="anonymous" on="assetLoadError(this)">
-  <img id="text3" src="assets/FollowEve.png" crossorigin="anonymous" on="assetLoadError(this)">
-  <img id="text4" src="assets/OnJourney.png" crossorigin="anonymous" on="aassetLoadError(this)">
-  <img id="text5" src="assets/AncientSymbols.png" crossorigin="anonymous" on="assetLoadError(this)">
-  <img id="text6" src="assets/SharedOrigin.png" crossorigin="anonymous" on="assetLoadError(this)">
-  <img id="text7" src="assets/ThroughTime.png" crossorigin="anonymous" on="assetLoadError(this)">
-  <img id="text8" src="assets/Innovating.png" crossorigin="anonymous" on="assetLoadError(this)">
-  <img id="text9" src="assets/Fighting.png" crossorigin="anonymous" on="assetLoadError(this)">
-  <img id="text10" src="assets/Surviving.png" crossorigin="anonymous" on="assetLoadError(this)">
-  <img id="text11" src="assets/LiveJourney.png" crossorigin="anonymous" on="assetLoadError(this)">
-  <img id="viz1" src="assets/TrueSize.png" crossorigin="anonymous" on="assetLoadError(this)">
-  <img id="viz2" src="assets/Timeline.png" crossorigin="anonymous" on="assetLoadError(this)">
-  <img id="viz3" src="assets/Arrow.png" crossorigin="anonymous" on="assetLoadError(this)">
-  <img id="viz4" src="assets/InvertMigration.gif" crossorigin="anonymous" on="assetLoadError(this)">
-  <img id="loading-gif" src="assets/EveandAdam.gif" alt="Loading..." crossorigin="anonymous" on="assetLoadError(this)">
-  <video id="video1" src="assets/PrologueFinal.mp4" crossorigin="anonymous" on="assetLoadError(this)"></video>
+  <img id="text1" src="assets/Virtual.png" crossorigin="anonymous" onerror="assetLoadError(this)">
+  <img id="text2" src="assets/DownloadApp.png" crossorigin="anonymous" onerror="assetLoadError(this)">
+  <img id="text3" src="assets/FollowEve.png" crossorigin="anonymous" onerror="assetLoadError(this)">
+  <img id="text4" src="assets/OnJourney.png" crossorigin="anonymous" onerror="aassetLoadError(this)">
+  <img id="text5" src="assets/AncientSymbols.png" crossorigin="anonymous" onerror="assetLoadError(this)">
+  <img id="text6" src="assets/SharedOrigin.png" crossorigin="anonymous" onerror="assetLoadError(this)">
+  <img id="text7" src="assets/ThroughTime.png" crossorigin="anonymous" onerror="assetLoadError(this)">
+  <img id="text8" src="assets/Innovating.png" crossorigin="anonymous" onerror="assetLoadError(this)">
+  <img id="text9" src="assets/Fighting.png" crossorigin="anonymous" onerror="assetLoadError(this)">
+  <img id="text10" src="assets/Surviving.png" crossorigin="anonymous" onerror="assetLoadError(this)">
+  <img id="text11" src="assets/LiveJourney.png" crossorigin="anonymous" onerror="assetLoadError(this)">
+  <img id="viz1" src="assets/TrueSize.png" crossorigin="anonymous" onerror="assetLoadError(this)">
+  <img id="viz2" src="assets/Timeline.png" crossorigin="anonymous" onerror="assetLoadError(this)">
+  <img id="viz3" src="assets/Arrow.png" crossorigin="anonymous" onerror="assetLoadError(this)">
+  <img id="viz4" src="assets/InvertMigration.gif" crossorigin="anonymous" onerror="assetLoadError(this)">
+  <img id="loading-gif" src="assets/EveandAdam.gif" alt="Loading..." crossorigin="anonymous" onerror="assetLoadError(this)">
+  <video id="video1" src="assets/PrologueFinal.mp4" crossorigin="anonymous" onerror="assetLoadError(this)"></video>
   <! Font Asset -->
     <a-asset-item id="varela-round-font" src="assets/VarelaRound-Regular.ttf"></a-asset-item>a-asset-item>
 
