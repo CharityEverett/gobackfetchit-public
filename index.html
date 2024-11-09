@@ -9,82 +9,102 @@
     <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
 
+ <head>
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- Preload Screen -->
-<link rel="preload" href="assets/VarelaRound-Regular.ttf" as="font" type="font/ttf" color="#000000" crossorigin>
+    <!-- Preload Font -->
+    <link rel="preload" href="assets/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin>
+
     <!-- Style Tag -->
     <style>
         @font-face {
             font-family: 'Varela Round';
             src: url('assets/VarelaRound-Regular.ttf') format('truetype');
-            font-weight: bold;
-            font-style: sans-serif;
+            font-weight: normal;
+            font-style: normal;
         }
       
-    .a-loader-title { font-family: 'Varela Round', sans-serif; color: black; font-size: 24px;
-    }
+        .a-loader-title { 
+            font-family: 'Varela Round', sans-serif; 
+            color: black; 
+            font-size: 24px;
+        }
 
-    #custom-loader {
-      display: flex;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
+        #custom-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
 
-    #loading-gif {
-      width: 100px;
-      height: 100px;
-      margin-bottom: 20px;
-    }
-  </style>
-    
+        #loading-gif {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="custom-loader">
+        <img id="loading-gif" src="assets/loading-gif.gif" alt="Loading...">
+        <div class="a-loader-title">Please wait while we...</div>
+    </div>
+
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script>
-  AFRAME.registerComponent('nav-mesh-link', {
-    init: function () {
-      var el = this.el;
-      var navmesh = document.querySelector('#navmesh');
-      el.setAttribute('movement-controls', {
-        constrainToNavMesh: true,
-        speed: 0.1
-      });
-      navmesh.setAttribute('nav-mesh', {});
-    }
-  });
-  document.querySelector('#rig').setAttribute('nav-mesh-link', '');
-</script>
+        AFRAME.registerComponent('nav-mesh-link', {
+            init: function () {
+                var el = this.el;
+                var navmesh = document.querySelector('#navmesh');
+                el.setAttribute('movement-controls', {
+                    constrainToNavMesh: true,
+                    speed: 0.1
+                });
+                navmesh.setAttribute('nav-mesh', {});
+            }
+        });
 
-    <script>
+        AFRAME.registerComponent('scene-setup', {
+            init: function () {
+                var sceneEl = this.el;
+                var loadingScreen = document.getElementById('custom-loader');
+
+                var setupCamera = function() {
+                    var cameraEl = sceneEl.querySelector('[camera]');
+                    if (cameraEl) {
+                        cameraEl.setAttribute('position', '0 1.6 -9');
+                    } else {
+                        console.warn('Camera element not found');
+                    }
+                };
+
+                var hideLoadingScreen = function() {
+                    if (loadingScreen) {
+                        loadingScreen.style.display = 'none';
+                    }
+                };
+
+                if (sceneEl.hasLoaded) {
+                    setupCamera();
+                    hideLoadingScreen();
+                } else {
+                    sceneEl.addEventListener('loaded', function () {
+                        setupCamera();
+                        hideLoadingScreen();
+                    });
+                }
+            }
+        });
+    </script>
       
-  AFRAME.registerComponent('custom-loading', {
-    init: function () {
-      var sceneEl = this.el;
-      var customLoader = document.getElementById('custom-loader');
-
-      sceneEl.addEventListener('loaded', function () {
-        customLoader.style.display = 'none';
-      });
-    }
-  });
-
-      </head>
-  <body>
-   <body>
-  <div id="custom-loader">
-    <img id="loading-gif" src="assets/loading-gif.gif" alt="Loading...">
-    <a-text value="Please wait while we..." font="Varela Round" color="#000000" position="0 1.5 -3"></a-text>
-    <div class="a-loader-title">Please wait while we...</div>
-  </div>
-
 <a-scene scene-setup loading-screen="enabled: false">
 
 
@@ -95,40 +115,7 @@
     <a-assets timeout="10000">   
         <script>
   
-       // Script for Scene Setup  
-    AFRAME.registerComponent('scene-setup', {
-  init: function () {
-    var sceneEl = this.el;
-    var loadingScreen = document.getElementById('loading-screen');
-
-    // Function to set up the camera
-    var setupCamera = function() {
-      var cameraEl = sceneEl.querySelector('[camera]');
-      if (cameraEl) {
-        cameraEl.setAttribute('position', '0 1.6 -9');
-      } else {
-        console.warn('Camera element not found');
-      }
-    };
-
-    // Function to hide the loading screen
-    var hideLoadingScreen = function() {
-      if (loadingScreen) {
-        loadingScreen.style.display = 'none';
-      }
-    };
-
-    if (sceneEl.hasLoaded) {
-      setupCamera();
-      hideLoadingScreen();
-    } else {
-      sceneEl.addEventListener('loaded', function () {
-        setupCamera();
-        hideLoadingScreen();
-      });
-    }
-        }
-      });
+       
     </script>
 
     <a-scene scene-setup>
