@@ -113,42 +113,33 @@
 
     
       
-<a-scene scene-setup loading-screen="enabled: false">
-  <a-assets>
-  <img id="text1" src="assets/Virtual.png" crossorigin="anonymous" on="assetLoad(this)">
-  <img id="text2" src="assets/DownloadApp.png" crossorigin="anonymous" on="assetLoad(this)">
-  <img id="text3" src="assets/FollowEve.png" crossorigin="anonymous" on="assetLoad(this)">
-  <img id="text4" src="assets/OnJourney.png" crossorigin="anonymous" on="assetLoad(this)">
-  <img id="text5" src="assets/AncientSymbols.png" crossorigin="anonymous" on="assetLoad(this)">
-  <img id="text6" src="assets/SharedOrigin.png" crossorigin="anonymous" on="assetLoad(this)">
-  <img id="text7" src="assets/ThroughTime.png" crossorigin="anonymous" on="assetLoad(this)">
-  <img id="text8" src="assets/Innovating.png" crossorigin="anonymous" on="assetLoad(this)">
-  <img id="text9" src="assets/Fighting.png" crossorigin="anonymous" on="assetLoad(this)">
-  <img id="text10" src="assets/Surviving.png" crossorigin="anonymous" on="assetLoad(this)">
-  <img id="text11" src="assets/LiveJourney.png" crossorigin="anonymous" on="assetLoad(this)">
-  <img id="viz1" src="assets/TrueSize.png" crossorigin="anonymous" on="assetLoad(this)">
-  <img id="viz2" src="assets/Timeline.png" crossorigin="anonymous" on="assetLoad(this)">
-  <img id="viz3" src="assets/Arrow.png" crossorigin="anonymous" on="assetLoad(this)">
-  <img id="viz4" src="assets/InvertMigration.gif" crossorigin="anonymous" on="assetLoad(this)">
-  <img id="loading-gif" src="assets/AdamandEve.gif" alt="Loading..." crossorigin="anonymous" on="assetLoad(this)">
-  <video id="video1" src="assets/PrologueFinal.mp4" crossorigin="anonymous" on="assetLoad(this)"></video>
-
-
-<!-- Font -->
-<a-asset-item id="varela-round-font" src="assets/VarelaRound-Regular.ttf"></a-asset-item>
+<a-scene scene-setup loading-screen="enabled: false" embedded physics="debug: true" style="height: 100vh; width: 100vw">
+  <a-assets timeout="10000">
+  <img id="text1" src="assets/Virtual.png" crossorigin="anonymous" on="assetLoadError(this)">
+  <img id="text2" src="assets/DownloadApp.png" crossorigin="anonymous" on="assetLoadError(this)">
+  <img id="text3" src="assets/FollowEve.png" crossorigin="anonymous" on="assetLoadError(this)">
+  <img id="text4" src="assets/OnJourney.png" crossorigin="anonymous" on="aassetLoadError(this)">
+  <img id="text5" src="assets/AncientSymbols.png" crossorigin="anonymous" on="assetLoadError(this)">
+  <img id="text6" src="assets/SharedOrigin.png" crossorigin="anonymous" on="assetLoadError(this)">
+  <img id="text7" src="assets/ThroughTime.png" crossorigin="anonymous" on="assetLoadError(this)">
+  <img id="text8" src="assets/Innovating.png" crossorigin="anonymous" on="assetLoadError(this)">
+  <img id="text9" src="assets/Fighting.png" crossorigin="anonymous" on="assetLoadError(this)">
+  <img id="text10" src="assets/Surviving.png" crossorigin="anonymous" on="assetLoadError(this)">
+  <img id="text11" src="assets/LiveJourney.png" crossorigin="anonymous" on="assetLoadError(this)">
+  <img id="viz1" src="assets/TrueSize.png" crossorigin="anonymous" on="assetLoadError(this)">
+  <img id="viz2" src="assets/Timeline.png" crossorigin="anonymous" on="assetLoadError(this)">
+  <img id="viz3" src="assets/Arrow.png" crossorigin="anonymous" on="assetLoadError(this)">
+  <img id="viz4" src="assets/InvertMigration.gif" crossorigin="anonymous" on="assetLoadError(this)">
+  <img id="loading-gif" src="assets/AdamandEve.gif" alt="Loading..." crossorigin="anonymous" on="assetLoadError(this)">
+  <video id="video1" src="assets/PrologueFinal.mp4" crossorigin="anonymous" on="assetLoadError(this)"></video>
+  <! Font Asset -->
+    <a-asset-item id="varela-round-font" src="assets/VarelaRound-Regular.ttf"></a-asset-item>a-asset-item>
 
 </a-assets>
 
+  /a-scene>
 
 </body>
-    <a-scene embedded physics="debug: true" style="height: 100vh; width: 100vw">
-      <a-assets>
-    <a-assets timeout="10000">
-     
-     
-   </a-assets>   
-    </a-assets>
-      </a-assets>
    
       <!-- Environment -->
       <a-sky color="#B6D0E2	"></a-sky>
