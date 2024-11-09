@@ -76,7 +76,7 @@
   <body>
    <body>
   <div id="custom-loader">
-    <img id="loading-gif" src="loading-gif" alt="Loading...">
+    <img id="loading-gif" src="assets/loading-gif.gif" alt="Loading...">
     <a-text value="Please wait while we..." font="Varela Round" color="#000000" position="0 1.5 -3"></a-text>
     <div class="a-loader-title">Please wait while we...</div>
   </div>
@@ -89,6 +89,19 @@
     <a-scene embedded physics="debug: true" style="height: 100vh; width: 100vw">
       <a-assets>
     <a-assets timeout="10000">   
+        <script>
+  
+        <!-- Script for Scene Setup  -->
+      AFRAME.registerComponent('scene-setup', {
+        init: function () {
+          var sceneEl = this.el;
+          var cameraEl = sceneEl.querySelector('[camera]');
+          cameraEl.setAttribute('position', '0 1.6 -9');
+        }
+      });
+    </script>
+
+    <a-scene scene-setup>
        <a-assets>
   <img id="text1" src="assets/virtual.png">
   <img id="text2" src="assets/DownloadApp.png">
@@ -134,6 +147,7 @@
  <a-entity>
       
 <!-- Cave Walls -->
+        
 <a-box position="-8 0 20" rotation="0 90 0" width="80" height="5" depth="0.1" color="#FFFFFF" static-body></a-box>
 <a-box position="8 0 20" rotation="0 90 0" width="80" height="5" depth="0.1" color="#FFFFFF" static-body></a-box>
 <a-box position="0 -2.5 20" rotation="90 0 0" width="16" height="80" depth="0.1" color="#FFFFFF" static-body></a-box>
