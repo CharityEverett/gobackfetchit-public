@@ -101,10 +101,10 @@
       
 .loading-text {
     font-family: 'Varela Round', sans-serif;
-    font-size: 56px; /* Increased font size */
+    font-size: 70px; /* Increased font size */
     font-weight: bold; /* Make the text bold */
     color: black;
-    margin-bottom: 20px; /* Add some space between text and gif */
+    margin-bottom: 40px; /* Add some space between text and gif */
 }
         #loading-gif {
             width: 1080px;
@@ -160,7 +160,7 @@
 
         <!-- Camera Rig -->
       <a-entity id="rig" movement-controls="speed: 0.1; constrainToNavMesh: true;" position="0 0 -9">
-  <a-entity camera position="0 1.6 0" look-controls wasd-controls="acceleration: 65"></a-entity>
+  <a-entity camera position="0 1.6 0" rotation="0 180 0" look-controls wasd-controls="acceleration: 65"></a-entity>
   <a-cursor
             raycaster="objects: .clickable"
             animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
