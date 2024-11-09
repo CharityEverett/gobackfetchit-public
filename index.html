@@ -96,11 +96,37 @@
         <script>
   
        // Script for Scene Setup  
-      AFRAME.registerComponent('scene-setup', {
-        init: function () {
-          var sceneEl = this.el;
-          var cameraEl = sceneEl.querySelector('[camera]');
-          cameraEl.setAttribute('position', '0 1.6 -9');
+    AFRAME.registerComponent('scene-setup', {
+  init: function () {
+    var sceneEl = this.el;
+    var loadingScreen = document.getElementById('loading-screen');
+
+    // Function to set up the camera
+    var setupCamera = function() {
+      var cameraEl = sceneEl.querySelector('[camera]');
+      if (cameraEl) {
+        cameraEl.setAttribute('position', '0 1.6 -9');
+      } else {
+        console.warn('Camera element not found');
+      }
+    };
+
+    // Function to hide the loading screen
+    var hideLoadingScreen = function() {
+      if (loadingScreen) {
+        loadingScreen.style.display = 'none';
+      }
+    };
+
+    if (sceneEl.hasLoaded) {
+      setupCamera();
+      hideLoadingScreen();
+    } else {
+      sceneEl.addEventListener('loaded', function () {
+        setupCamera();
+        hideLoadingScreen();
+      });
+    }
         }
       });
     </script>
