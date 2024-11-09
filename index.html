@@ -146,6 +146,17 @@
       <!-- Directional Light -->
       <a-light type="directional" color="#FFF" intensity="0.6" position="-0.5 1 1"></a-light>
 
+        <!-- Camera Rig -->
+      <a-entity id="rig" movement-controls="speed: 0.1; constrainToNavMesh: true;" position="0 0 -9">
+  <a-entity camera position="0 1.6 0" look-controls wasd-controls="acceleration: 65"></a-entity>
+  <a-cursor
+            raycaster="objects: .clickable"
+            animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+            animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+            event-set__mouseenter="color: springgreen"
+            event-set__mouseleave="color: black">
+          </a-cursor>
+</a-entity>
         
  <a-entity>
       
@@ -190,17 +201,7 @@ document.querySelector('a-scene').setAttribute('custom-loading', '');
 <!-- Videos on Cave Walls -->
 <a-video src="#video1" width="3.5" height="1.97" position="-7.9 1.5 45" rotation="0 90 0"></a-video>
 
-  <!-- Camera Rig -->
-      <a-entity id="rig" movement-controls="speed: 0.1; constrainToNavMesh: true;" position="0 0 -9">
-  <a-entity camera position="0 1.6 0" look-controls wasd-controls="acceleration: 65"></a-entity>
-  <a-cursor
-            raycaster="objects: .clickable"
-            animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
-            animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
-            event-set__mouseenter="color: springgreen"
-            event-set__mouseleave="color: black">
-          </a-cursor>
-</a-entity>
+
              </a-entity>
       </a-entity>
               </a-scene>
