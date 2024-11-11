@@ -8,6 +8,7 @@
     <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
     <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-responsive-component@0.1.0/dist/aframe-responsive-component.min.js"></script>
 
 <!-- Define asset load error function -->
     <script>   
@@ -122,7 +123,7 @@
 
     
       
-<a-scene scene-setup loading-screen="enabled: false" embedded physics="debug: true" style="height: 100vh; width: 100vw">
+<a-scene scene-setup loading-screen="enabled: false" embedded physics="debug: true" style="height: 100vh; width: 100vw" responsive="maxPixelRatio: 2">
   <a-assets timeout="10000">
   <img id="text1" src="assets/Virtual.png" crossorigin="anonymous" onerror="assetLoadError(this)">
   <img id="text2" src="assets/DownloadApp.png" crossorigin="anonymous" onerror="assetLoadError(this)">
@@ -160,8 +161,26 @@
       <a-light type="directional" color="#FFF" intensity="0.6" position="-0.5 1 1"></a-light>
 
         <!-- Camera Rig -->
-      <a-entity id="rig" movement-controls="speed: 0.1; constrainToNavMesh: true;" position="0 0 -9">
-  <a-entity camera position="0 1.6 0" look-controls wasd-controls="acceleration: 65">
+    <a-entity id="rig" 
+          movement-controls="speed: 0.1; constrainToNavMesh: true;" 
+          position="0 0 -9"
+          responsive="controller: .controller;
+                      _default:[{'attr':'position', 'value':'0 0 -9'}];
+                      mobile:[{'attr':'position', 'value':'0 0 -7'}];">
+  <a-entity camera 
+            position="0 1.6 0" 
+            look-controls 
+            wasd-controls="acceleration: 65"
+            responsive="controller: .controller;
+                        _default:[{'attr':'position', 'value':'0 1.6 0'}];
+                        mobile:[{'attr':'position', 'value':'0 1.3 0'}];">
+    <a-entity cursor="fuse: true; fuseTimeout: 500"
+              position="0 0 -1"
+              geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+              material="color: black; shader: flat">
+    </a-entity>
+  </a-entity>
+</a-entity>
   <a-cursor
             raycaster="objects: .clickable"
             animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
