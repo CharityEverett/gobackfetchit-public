@@ -72,57 +72,92 @@
     <!-- Preload Font -->
     <link rel="preload" href="assets/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin>
 
-    <!-- Load Screen Style Tag -->
-    <style>
-        @font-face {
-            font-family: 'Varela Round';
-            src: url('assets/VarelaRound-Regular.ttf') format('truetype');
-            font-weight: bold;
-            font-style: normal;
-        }
-      
-        .a-loader-title { 
-            font-family: 'Varela Round', sans-serif; 
-            font-weight: bold;
-            color: black; 
-            font-size: 56px;
-        }
+    <!-- Responsive Load Screen -->
+   <style>
+    @font-face {
+        font-family: 'Varela Round';
+        src: url('assets/VarelaRound-Regular.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+    }
+  
+    .a-loader-title { 
+        font-family: 'Varela Round', sans-serif; 
+        font-weight: bold;
+        color: black; 
+        font-size: 5vw; /* Responsive font size */
+    }
 
-        #custom-loader {
-            display: flex;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: white;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-      
-.loading-text {
-    font-family: 'Varela Round', sans-serif;
-    font-size: 70px; /* Increased font size */
-    font-weight: bold; /* Make the text bold */
-    color: black;
-    margin-bottom: 20px; /* Add some space between text and gif */
-}
-        #loading-gif {
-            width: 1080px;
-            height: 920px;
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-<body>
-    <div id="custom-loader">
-        <div class="loading-text">Please wait while we...</div>
-        <img id="loading-gif" src="assets/AdamandEve.gif" alt="Loading...">
-    </div>
+    #custom-loader {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+  
+    .loading-text {
+        font-family: 'Varela Round', sans-serif;
+        font-size: 6vw; /* Responsive font size */
+        font-weight: bold;
+        color: black;
+        margin-bottom: 2vh; /* Responsive margin */
+        text-align: center; /* Ensure text is centered */
+    }
 
-    <script>
+    #loading-gif {
+        width: 90vw; /* Responsive width */
+        max-width: 1080px; /* Maximum width */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 2vh; /* Responsive margin */
+    }
+
+    @media (min-width: 1200px) {
+        .loading-text {
+            font-size: 70px; /* Fixed size for larger screens */
+        }
+    }
+</style>
+
+<div id="custom-loader">
+    <div class="loading-text">Please wait while we...</div>
+    <img id="loading-gif" src="assets/AdamandEve.gif" alt="Loading...">
+</div>
+
+<script>
+    const loadingScreen = document.getElementById('custom-loader');
+    const loadingGif = document.getElementById('loading-gif');
+
+    function getGifDuration(gif) {
+        return new Promise(resolve => {
+            gif.addEventListener('load', function() {
+                // Assume 5 seconds if duration can't be determined
+                resolve(typeof gif.duration !== 'undefined' ? gif.duration / 1000 : 5);
+            });
+        });
+    }
+
+    function hideLoadingScreen() {
+        loadingScreen.style.display = 'none';
+    }
+
+    Promise.all([
+        getGifDuration(loadingGif),
+        new Promise(resolve => {
+            document.querySelector('a-scene').addEventListener('loaded', resolve);
+        })
+    ]).then(([gifDuration]) => {
+        setTimeout(hideLoadingScreen, gifDuration * 1000);
+    });
+
+
+  
   AFRAME.registerComponent('teleport-button', {
     init: function () {
       var el = this.el;
