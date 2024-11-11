@@ -181,14 +181,16 @@
           position="0 0 -9"
           responsive="controller: .controller;
                       _default:[{'attr':'position', 'value':'0 0 -9'}];
-                      mobile:[{'attr':'position', 'value':'0 0 -7'}];">
+                      mobile:[{'attr':'position', 'value':'0 0 -7'}];"
+          class="collidable">
   <a-entity camera 
             position="0 1.6 0" 
             look-controls 
             wasd-controls="acceleration: 65"
             responsive="controller: .controller;
                         _default:[{'attr':'position', 'value':'0 1.6 0'}];
-                        mobile:[{'attr':'position', 'value':'0 1.3 0'}];">
+                        mobile:[{'attr':'position', 'value':'0 1.3 0'}];"
+            class="collidable">
     <a-cursor
     raycaster="objects: .clickable, .collidable"
     fuse="true"
