@@ -72,7 +72,7 @@
     <!-- Preload Font -->
     <link rel="preload" href="assets/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin>
 
-    <!-- Style Tag -->
+    <!-- Load Screen Style Tag -->
     <style>
         @font-face {
             font-family: 'Varela Round';
@@ -265,6 +265,64 @@ document.querySelector('a-scene').setAttribute('custom-loading', '');
              </a-entity>
       </a-entity>
               </a-scene>
-    
+  
+  <!-- Script for Full Screen and VR Buttons -->
+  <script>
+   document.addEventListener('DOMContentLoaded', function() {
+    var scene = document.querySelector('a-scene');
+    var enterVRButton = document.getElementById('enterVR');
+    var enterFSButton = document.getElementById('enterFS');
+
+    // Handle Enter VR
+    enterVRButton.addEventListener('click', function() {
+      if (scene.is('vr-mode')) {
+        scene.exitVR();
+      } else {
+        scene.enterVR();
+      }
+    });
+
+    // Handle Full Screen
+    enterFSButton.addEventListener('click', function() {
+      if (!document.fullscreenElement) {
+        if (document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen();
+        } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+          document.documentElement.mozRequestFullScreen();
+        } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+          document.documentElement.webkitRequestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+          document.documentElement.msRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) { // Firefox
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { // IE/Edge
+          document.msExitFullscreen();
+        }
+      }
+    });
+
+    // Hide buttons when entering VR
+    scene.addEventListener('enter-vr', function() {
+      document.getElementById('buttons').style.display = 'none';
+    });
+
+    // Show buttons when exiting VR
+    scene.addEventListener('exit-vr', function() {
+      document.getElementById('buttons').style.display = 'block';
+    });
+  });
+</script>
+  
+  <!-- Full Screen and VR Buttons -->
+    <div id="buttons" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 999;">
+  <button id="enterVR" style="padding: 10px; margin: 5px;">Enter VR</button>
+  <button id="enterFS" style="padding: 10px; margin: 5px;">Full Screen</button>
+</div>
   </body>
 </html>
