@@ -193,6 +193,21 @@
   <img id="viz3" src="assets/Arrow.png" crossorigin="anonymous" onerror="assetLoadError(this)">
   <img id="viz4" src="assets/InvertMigration.gif" crossorigin="anonymous" onerror="assetLoadError(this)">
   <img id="loading-gif" src="assets/AdamandEve.gif" alt="Loading..." crossorigin="anonymous" onerror="assetLoadError(this)">
+<!-- Map Projections -->  
+  <img id="armadillo" src="assets/d3-geo-projection-images/armadillo.png">
+  <img id="berghaus" src="assets/d3-geo-projection-images/berghaus.png">
+  <img id="collignon" src="assets/d3-geo-projection-images/collignon.png">
+  <img id="conic-equal-area" src="assets/d3-geo-projection-images/conic-equal-area.png">
+  <img id="craig" src="assets/d3-geo-projection-images/craig.png">
+  <img id="cylindrical-equal-area" src="assets/d3-geo-projection-images/cylindrical-equal-area.png">
+  <img id="gingery-raw" src="assets/d3-geo-projection-images/gingery-raw.png">
+  <img id="hammer-retro-azimuthal" src="assets/d3-geo-projection-images/hammer-retro-azimuthal.png">
+  <img id="healpix" src="assets/d3-geo-projection-images/healpix.png">
+  <img id="mercator" src="assets/d3-geo-projection-images/mercator.png">
+  <img id="orthographic" src="assets/d3-geo-projection-images/orthographic.png">
+  <img id="sinusoidal" src="assets/d3-geo-projection-images/sinusoidal.png">
+  <img id="bonne" src="assets/d3-geo-projection-images/bonne.png">
+
 <!--  <video id="video1" src="assets/PrologueFinal.mp4" crossorigin="anonymous" onerror="assetLoadError(this)"></video> -->
   <! Font Asset -->
     <a-asset-item id="varela-round-font" src="assets/VarelaRound-Regular.ttf"></a-asset-item>a-asset-item>
@@ -271,6 +286,30 @@
   <!-- End of the cave -->
   <a-plane position="0 0 60" rotation="0 180 0" width="16" height="5" color="#D3D3D3" static-body></a-plane>
 
+   <!-- Projection Wall -->
+
+   <a-entity id="projection-wall" position="-7.9 1.5 0" rotation="0 90 0">
+  <!-- Row 1 -->
+  <a-plane class="projection-image" position="-4 3 0" width="2" height="2" src="#armadillo" data-projection="armadillo"></a-plane>
+  <a-plane class="projection-image" position="0 3 0" width="2" height="2" src="#berghaus" data-projection="berghaus"></a-plane>
+  <a-plane class="projection-image" position="4 3 0" width="2" height="2" src="#collignon" data-projection="collignon"></a-plane>
+
+  <!-- Row 2 -->
+  <a-plane class="projection-image" position="-4 0 0" width="2" height="2" src="#conic-equal-area" data-projection="conic-equal-area"></a-plane>
+  <a-plane class="projection-image" position="0 0 0" width="2" height="2" src="#craig" data-projection="craig"></a-plane>
+  <a-plane class="projection-image" position="4 0 0" width="2" height="2" src="#cylindrical-equal-area" data-projection="cylindrical-equal-area"></a-plane>
+
+  <!-- Row 3 -->
+  <a-plane class="projection-image" position="-4 -3 0" width="2" height="2" src="#gingery-raw" data-projection="gingery-raw"></a-plane>
+  <a-plane class="projection-image" position="0 -3 0" width="2" height="2" src="#hammer-retro-azimuthal" data-projection="hammer-retro-azimuthal"></a-plane>
+  <a-plane class="projection-image" position="4 -3 0" width="2" height="2" src="#healpix" data-projection="healpix"></a-plane>
+
+  <!-- Row 4 -->
+  <a-plane class="projection-image" position="-2 -6 0" width="2" height="2" src="#mercator" data-projection="mercator"></a-plane>
+  <a-plane class="projection-image" position="2 -6 0" width="2" height="2" src="#orthographic" data-projection="orthographic"></a-plane>
+  <a-plane class="projection-image" position="6 -6 0" width="2" height="2" src="#bonne" data-projection="bonne"></a-plane>
+</a-entity>
+   
   </a-entity>
         
 <script>
