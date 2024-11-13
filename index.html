@@ -289,55 +289,154 @@
   <a-plane position="0 0 60" rotation="0 180 0" width="16" height="5" color="#D3D3D3" static-body></a-plane>
 
    <!-- Projection Wall -->
-<<a-entity id="projection-wall" position="7.9 0 0" rotation="0 -90 0">
-  <a-plane class="projection-image" position="-24 0.21 0" width="6" height="4" src="#armadillo" data-projection="armadillo"></a-plane>
-   <a-entity position="-24 -2.247 0" text="value: Armadillo Projection; align: center; width: 6; size: 5vw; color: white; font: 'assets/VarelaRound-Regular.ttf"></a-entity>
-  <a-plane position="-24 --2.247 0.01" width="6" height="0.8" color="black"></a-plane>
+<a-entity id="projection-wall" position="7.9 1 0" rotation="0 -90 0">
+  <!-- Armadillo Projection -->
+  <a-plane class="projection-image" position="-30 0 0" width="5" height="3.33" src="#armadillo" data-projection="armadillo"></a-plane>
+  <a-entity position="-30 -1.5 0.01" text="value: Armadillo Projection; align: center; width: 5; size: 5vw; color: white; font: 'assets/VarelaRound-Regular.ttf'"></a-entity>
+  <a-plane position="-30 -1.5 0" width="5" height="0.8" color="black"></a-plane>
 
-  <a-plane class="projection-image" position="-16 0.21 0" width="6" height="4" src="#berghaus" data-projection="berghaus"></a-plane>
-  <a-entity position="-16 -2.247 0" text="value: Berghaus Projection; align: center; width: 6; size: 5vw; color: white; font: assets/VarelaRound-Regular.ttf"></a-entity>
-  <a-plane position="-16 -2.247 0.01" width="6" height="0.8" color="black"></a-plane>
+  <!-- Berghaus Projection -->
+  <a-plane class="projection-image" position="-20 0 0" width="5" height="3.33" src="#berghaus" data-projection="berghaus"></a-plane>
+  <a-entity position="-20 -1.5 0.01" text="value: Berghaus Projection; align: center; width: 5; size: 5vw; color: white; font: 'assets/VarelaRound-Regular.ttf'"></a-entity>
+  <a-plane position="-20 -1.5 0" width="5" height="0.8" color="black"></a-plane>
+
+  <!-- Collignon Projection -->
+  <a-plane class="projection-image" position="-10 0 0" width="5" height="3.33" src="#collignon" data-projection="collignon"></a-plane>
+  <a-entity position="-10 -1.5 0.01" text="value: Collignon Projection; align: center; width: 5; size: 5vw; color: white; font: 'assets/VarelaRound-Regular.ttf'"></a-entity>
+  <a-plane position="-10 -1.5 0" width="5" height="0.8" color="black"></a-plane>
+
+  <!-- Conic Equal Area Projection -->
+  <a-plane class="projection-image" position="0 0 0" width="5" height="3.33" src="#conic-equal-area" data-projection="conic-equal-area"></a-plane>
+  <a-entity position="0 -1.5 0.01" text="value: Conic Equal Area Projection; align: center; width: 5; size: 5vw; color: white; font: 'assets/VarelaRound-Regular.ttf'"></a-entity>
+  <a-plane position="0 -1.5 0" width="5" height="0.8" color="black"></a-plane>
+
+  <!-- Craig Projection -->
+  <a-plane class="projection-image" position="10 0 0" width="5" height="3.33" src="#craig" data-projection="craig"></a-plane>
+  <a-entity position="10 -1.5 0.01" text="value: Craig Projection; align: center; width: 5; size: 5vw; color: white; font: 'assets/VarelaRound-Regular.ttf'"></a-entity>
+  <a-plane position="10 -1.5 0" width="5" height="0.8" color="black"></a-plane>
+
+   <!-- Cylindrical Equal Area Projection -->
+   <a-plane class="projection-image" position="20 0 0" width="5" height="3.33"
+            src="#cylindricalEqualArea"
+            data-projection="cylindricalEqualArea"></a-plane>
+   <a-entity position="20 -1.5 .01"
+             text="value: Cylindrical Equal Area Projection;
+                   align: center;
+                   width:6;
+                   size:5vw;
+                   color:white;
+                   font:'assets/VarelaRound-Regular.ttf'">
+   </a-entity>
+   <a-plane position="-24 -2.247 .01"
+            width=6
+            height=0.8
+            color=black></a-plane>
+
+   <!-- Gingery Projection -->
+   <a-plane class="projection-image"
+            position="-24 .21 .05"
+            width=6
+            height=4
+            src="#gingery"
+            data-projection=gingery></a-plane>
+   <a-entity position="-24 -2 .01"
+             text=value:Gingery Projection;
+                   align:center;
+                   width=6;
+                   size=5vw;
+                   color:white;
+                   font='assets/VarelaRound-Regular.ttf'>
+   </a-entity>
+   <a-plane position="-24 -2 .01"
+            width=6
+            height=0.8
+            color=black></a-plane>
+
+   <!-- Hammer Retroazimuthal Projection -->
+   <a-plane class=projection-image
+            position= "24 .21 .05"
+            width=6
+            height=4
+            src="#hammerRetroazimuthal"
+            data-projection=hammerRetroazimuthal></a-plane>
+   <a-entity position= "24 -2 .01"
+             text=value:Hammer Retroazimuthal Projection;
+                   align:center;
+                   width=6;
+                   size=5vw;
+                   color:white;
+                   font='assets/VarelaRound-Regular.ttf'>
+   </a-entity>
+   <a-plane position= "24 -2 .01"
+            width=6
+            height=0.8
+            color=black></a-plane>
+
+   <!-- Healpix Projection -->
+   <a-plane class=projection-image
+            position= "32 .21 .05"
+            width=6
+            height=4
+            src="#healpix"
+            data-projection=healpix></a-plane>
+   <a-entity position= "32 -2 .01"
+             text=value:Healpix Projection;
+                   align:center;
+                   width=6;
+                   size=5vw;
+                   color:white;
+                   font='assets/VarelaRound-Regular.ttf'>
+   </a-entity>
+   <a-plane position= "32 -2 .01"
+            width=6
+            height=0.8
+            color=black></a-plane>
+
+   <!-- Mercator Projection -->
+   <a-plane class=image-projection 
+             position=-40 .21 .05 
+             width=6 
+             height=4 
+             src="#mercator"
+             data-projection=mercator></plane>
+   <text value=Mercator Projection 
+         align=center 
+         width=6 
+         size=5vw 
+         color:white 
+         font='assets/VarelaRound-Regular.ttf'>
+   </text>
+     </plane> 
+     <plane position=-40 -2 .01 
+           width=6 
+           height=.8 
+           color:black />
    
-  <a-plane class="projection-image" position="-8 0.21 0" width="6" height="4" src="#collignon" data-projection="collignon"></a-plane>
-  <a-entity position="-8 -2.247 0" text="value: Collignon Projection; align: center; width: 6; size: 5vw; color: white; font: assets/VarelaRound-Regular.ttf"></a-entity>
-  <a-plane position="-8 -2.247 0.01" width="6" height="0.8" color="black"></a-plane>
+     <!-- Orthographic Projection -->
+     <plane class=image-projection 
+           position=-48 .21 .05 
+           width=6 
+           height=.4 
+           src="#orthographic"
+           data-projection='orthographic'></plane>  
+     <text value='Orthographic Projection' 
+           align=center 
+           width='6' 
+           size='4vw' 
+           color='white' 
+           font='assets/VarelaRound-Regular.ttf'>
+     </text>  
+     </plane>  
+     <plane position=-48 -2 .01 
+           width='6' 
+           height='.8' 
+           color='black'/>
    
-   <a-plane class="projection-image" position="0 0.21 0" width="6" height="4"  src="#conic-equal-area" data-projection="conic-equal-area"></a-plane>
-   <a-entity position="0 -2.247 0" text="value: Conic Equal Area Projection; align: center; width: 6; size: 5vw; color: white; font: assets/VarelaRound-Regular.ttf"></a-entity>
-   <a-plane position="0 -2.247 0.01" width="6" height="0.8" color="black"></a-plane>
-   
-   <a-plane class="projection-image" position="8 0.21 0" width="6" height="4"  src="#craig" data-projection="craig"></a-plane>
-   <a-entity position="8 -2.247 0" text="value: Craig Projection; align: center; width: 6; size: 5vw; color: white; font: assets/VarelaRound-Regular.ttf"></a-entity>
-   <a-plane position="8 -2.247 0.01" width="6" height="0.8" color="black"></a-plane>
-  
-  <a-plane class="projection-image" position="16 0.21 0" width="6" height="4" src="#cylindricalEqualArea" data-projection="cylindricalEqualArea"></a-plane>
-  <a-entity position="16 -2.247 0" text="value: Cylindrical Equal Area Projection; align: center; width: 6; size: 5vw; color: white; font: assets/VarelaRound-Regular.ttf"></a-entity>
-  <a-plane position="16 -2.247 0.01" width="6" height="0.8" color="black"></a-plane>
-   
-   <a-plane class="projection-image" position="24 0.21 0" width="6" height="4" src="#gingery" data-projection="gingery"></a-plane>
-   <a-entity position="24 -2.247 0" text="value: Gingery Projection; align: center; width: 6; size: 5vw; color: white; font: assets/VarelaRound-Regular.ttf"></a-entity>
-   <a-plane position="24 -2.247 0.01" width="6" height="0.8" color="black"></a-plane>
-   
-   <a-plane class="projection-image" position="32 0.21 0" width="6" height="4" src="#hammerRetroazimuthal" data-projection="hammerRetroazimuthal"></a-plane>
-   <a-entity position="32 -2.247 0" text="value: Hammer Retroazimuthal Projection; align: center; width: 6; size: 5vw; color: white; font: assets/VarelaRound-Regular.ttf"></a-entity>
-   <a-plane position="32 -2.247 0.01" width="6" height="0.8" color="black"></a-plane>
-   
-  <a-plane class="projection-image" position="40 0.21 0" width="6" height="4" src="#healpix" data-projection="healpix"></a-plane>
-  <a-entity position="40 -2.247 0" text="value: Healpix Projection; align: center; width: 6; size: 5vw; color: white; font: assets/VarelaRound-Regular.ttf"></a-entity>
-  <a-plane position="40 -2.247 0.01" width="6" height="0.8" color="black"></a-plane>
-   
-  <a-plane class="projection-image" position="48 0.21 0" width="6" height="4" src="#mercator" data-projection="mercator"></a-plane>
-  <a-entity position="48 -2.247 0" text="value: Mercator Projection; align: center; width: 6; size: 5vw; color: white; font: assets/VarelaRound-Regular.ttf"></a-entity>
-  <a-plane position="48 -2.247 0.01" width="6" height="0.8" color="black"></a-plane>
-   
-  <a-plane class="projection-image" position="56 0.21 0" width="6" height="4" src="#orthographic" data-projection="orthographic"></a-plane>
-  <a-entity position="56 -2.247 0" text="value: Orthographic Projection; align: center; width: 6; size: 5vw; color: white; font: assets/VarelaRound-Regular.ttf"></a-entity>
-  <a-plane position="56 -2.247 0.01" width="6" height="0.8" color="black"></a-plane>
-   
-  <a-plane class="projection-image" position="64 0.21 0" width="6" height="4" src="#bonne" data-projection="bonne"></a-plane>
-  <a-entity position="64 -2.247 0" text="value: Bonne Projection; align: center; width: 6; color: white; size: 5vw; font: assets/VarelaRound-Regular.ttf"></a-entity>
-  <a-plane position="64 -2.247 0.01" width="6" height="0.8" color="black"></a-plane>
-</a-entity>
+     <!-- Bonne Projection -->
+     <plane class=image-projection 
+           position=-56 .21 .05 
+           width='6' 
+           height='4'
 
   <script>
 document.querySelector('a-scene').setAttribute('custom-loading', '');
