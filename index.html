@@ -243,8 +243,9 @@
 
 
 
+<!-- Video File -->
+ <a-asset-item id="vimeo-video" src="https://player.vimeo.com/video/1031314721"></a-asset-item>
 
-<!--  <video id="video1" src="assets/PrologueFinal.mp4" crossorigin="anonymous" onerror="assetLoadError(this)"></video> -->
   <!-- Font Asset -->
     <a-asset-item id="varela-round-font" src="assets/VarelaRound-Regular.ttf"></a-asset-item>a-asset-item>
 
@@ -385,10 +386,10 @@
   <a-entity event-set__click="_event: click; _target: #link-invert-migration; scale: 1;"></a-entity>
 </a-entity>
   
-<!-- Videos on Cave Walls -->
-<!-- <a-video src="#video1" width="3.5" height="1.97" position="-7.9 1.5 45" rotation="0 90 0"></a-video> -->
-
-
+<!-- Video on Cave Wall -->
+<a-entity id="video-wall" position="0 1.5 59.9" rotation="0 180 0">
+  <a-video src="#vimeo-video" width="14" height="7.875" position="0 0 0"></a-video>
+</a-entity>
              </a-entity>
       </a-entity>
               </a-scene>
@@ -472,6 +473,14 @@
   const url = wikipediaPages[projection] || "https://en.wikipedia.org/wiki/Map_projection";
   window.open(url, '_blank');
 }
+    // Autoplay video 
       </script>
+    <script>
+  AFRAME.registerComponent('auto-play-video', {
+    init: function () {
+      this.el.components.material.material.map.image.play();
+    }
+  });
+</script>
   </body>
 </html>
