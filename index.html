@@ -75,63 +75,74 @@
     <link rel="preload" href="assets/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin>
 
     <!-- Responsive Load Screen -->
-   <style>
-    @font-face {
-        font-family: 'Varela Round';
-        src: url('assets/VarelaRound-Regular.ttf') format('truetype');
-        font-weight: bold;
-        font-style: normal;
-    }
-  
-    .a-loader-title { 
-        font-family: 'Varela Round', sans-serif; 
-        font-weight: bold;
-        color: black; 
-        font-size: 5vw; /* Responsive font size */
-    }
+  <style>
+@font-face {
+  font-family: 'Varela Round';
+  src: url('assets/VarelaRound-Regular.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
 
-    #custom-loader {
-        display: flex;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: white;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-    }
-  
-    .loading-text {
-        font-family: 'Varela Round', sans-serif;
-        font-size: 6vw; /* Responsive font size */
-        font-weight: bold;
-        color: black;
-        margin-bottom: 2vh; /* Responsive margin */
-        text-align: center; /* Ensure text is centered */
-    }
+.a-loader-title {
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+  color: black;
+  font-size: 5vw;
+}
 
-    #loading-gif {
-        width: 90vw; /* Responsive width */
-        max-width: 1080px; /* Maximum width */
-        height: auto; /* Maintain aspect ratio */
-        margin-bottom: 2vh; /* Responsive margin */
-    }
+#custom-loader {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
 
-    @media (min-width: 1200px) {
-        .loading-text {
-            font-size: 70px; /* Fixed size for larger screens */
-        }
-    }
+.loading-text {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 6vw;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 4vh;
+  text-align: center;
+}
+
+#loading-gif {
+  width: 90vw;
+  max-width: 1080px;
+  height: auto;
+  margin-bottom: 4vh;
+}
+
+.audio-text {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 4vw;
+  color: black;
+  margin-top: 4vh;
+  text-align: center;
+}
+
+@media (min-width: 1200px) {
+  .loading-text {
+    font-size: 70px;
+  }
+  .audio-text {
+    font-size: 48px;
+  }
+}
 </style>
 
 <div id="custom-loader">
-    <div class="loading-text">Please wait while we...</div>
-    <img id="loading-gif" src="assets/AdamandEve.gif" alt="Loading...">
+  <div class="loading-text">Please wait while we...</div>
+  <img id="loading-gif" src="assets/AdamandEve.gif" alt="Loading...">
+  <div class="audio-text">Turn on your audio</div>
 </div>
-
 <script>
     const loadingScreen = document.getElementById('custom-loader');
     const loadingGif = document.getElementById('loading-gif');
