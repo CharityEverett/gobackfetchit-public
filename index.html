@@ -323,6 +323,7 @@
 
    <!-- Projection Wall -->
 <a-entity id="projection-wall" position="7.9 1.5 0" rotation="0 -90 0">
+  
   <!-- Armadillo Projection -->
   <a-plane class="projection-image" position="-16 -0.5 0" width="4.5" height="3" src="#armadillo" data-projection="armadillo"></a-plane>
  <a-image position="-16 -2.25 0.01" width="3" height="0.6" src="#armadillo-nameplate"></a-image>
@@ -377,7 +378,7 @@
 
 
   <!-- Invert Migration Visualization -->
-  <a-plane class="visualization-image" position="0 0.5 10" width="4.5" height="3" src="#viz1" data-visualization="invertMigration"></a-plane>
+  <a-plane class="visualization-image" position="8.1 0.5 10" width="4.5" height="3" src="#viz1" data-visualization="invertMigration"></a-plane>
   <a-plane position="0 -2.25 10" width="4.5" height="0.6" color="black"></a-plane>
   <a-image position="0 -2.25 10.01" width="4.5" height="0.5" src="assets/nameplates/invertMigration.gif"></a-image>
   <a-entity event-set__click="_event: click; _target: #link-invert-migration; scale: 1;"></a-entity>
