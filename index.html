@@ -192,7 +192,7 @@
 
     <!-- Visualizations -->
   <img id="loading-gif" src="assets/AdamandEve.gif" alt="Loading..." crossorigin="anonymous" onerror="assetLoadError(this)">
-  <img id="viz1" src="assets/InvertMigration.gif" crossorigin="anonymous">
+  <img id="viz1" src="assets/InvertMigration.gif" crossorigin="anonymous" onerror="assetLoadError(this)">
 <!-- Map Projections -->  
   <img id="armadillo" src="assets/map-projections/armadillo.png">
   <img id="berghaus" src="assets/map-projections/berghaus.png">
@@ -237,7 +237,7 @@
 
 <a-entity id="visualization-wall" position="-7.9 1.5 20" rotation="0 90 0">
   <!-- InvertMigration Visualization -->
-<a-plane class="visualization-image" position="0 0 0" width="14" height="10.5" src="#viz1" material="shader: flat; src: #viz1"></a-plane>
+<a-plane class="visualization-image" position="-7.9 1.5 20" rotation="0 90 0" width="14" height="10.5" src="#viz4" material="shader: flat; src: #viz4"></a-plane>
 </a-entity>
 
 
