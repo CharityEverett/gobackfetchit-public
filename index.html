@@ -20,38 +20,38 @@
       console.error('Failed to load asset:', asset.id, asset.src);
     }
       
-      AFRAME.registerComponent('scene-setup', {
-            init: function () {
-                var sceneEl = this.el;
-                var loadingScreen = document.getElementById('custom-loader');
+    AFRAME.registerComponent('scene-setup', {
+  init: function () {
+    var sceneEl = this.el;
+    var loadingScreen = document.getElementById('custom-loader');
 
-                var setupCamera = function() {
-                    var cameraEl = sceneEl.querySelector('[camera]');
-                    if (cameraEl) {
-                        cameraEl.setAttribute('position', '0 1.6 -9');
-                        cameraEl.setAttribute('rotation', '0 180 0');
-                    } else {
-                        console.warn('Camera element not found');
-                    }
-                };
+    function setupCamera() {
+      var cameraEl = sceneEl.querySelector('[camera]');
+      if (cameraEl) {
+        cameraEl.setAttribute('position', '0 1.6 -9');
+        cameraEl.setAttribute('rotation', '0 180 0');
+      } else {
+        console.warn('Camera element not found');
+      }
+    }
 
-                var hideLoadingScreen = function() {
-                    if (loadingScreen) {
-                        loadingScreen.style.display = 'none';
-                    }
-                };
+    function hideLoadingScreen() {
+      if (loadingScreen) {
+        loadingScreen.style.display = 'none';
+      }
+    }
 
-                if (sceneEl.hasLoaded) {
-                    setupCamera();
-                    hideLoadingScreen();
-                } else {
-                    sceneEl.addEventListener('loaded', function () {
-                        setupCamera();
-                        hideLoadingScreen();
-                    });
-                }
-            }
+    if (sceneEl.hasLoaded) {
+      setupCamera();
+      hideLoadingScreen();
+    } else {
+      sceneEl.addEventListener('loaded', function () {
+        setupCamera();
+        hideLoadingScreen();
       });
+    }
+  }
+});
               
               </script>
 <script>
