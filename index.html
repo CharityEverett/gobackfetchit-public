@@ -172,19 +172,19 @@
 
 
   
-  AFRAME.registerComponent('teleport-button', {
-    init: function () {
-      var el = this.el;
-      var teleportControls = document.querySelector('[teleport-controls]');
-      
-      el.addEventListener('click', function () {
-        teleportControls.components['teleport-controls'].onButtonDown();
-        setTimeout(function () {
-          teleportControls.components['teleport-controls'].onButtonUp();
-        }, 250);
-      });
-    }
-  });
+AFRAME.registerComponent('teleport-button', {
+  init: function() {
+    var el = this.el;
+    var teleportControls = document.querySelector('[teleport-controls]');
+    
+    el.addEventListener('click', function () {
+      teleportControls.components['teleport-controls'].onButtonDown();
+      setTimeout(function () {
+        teleportControls.components['teleport-controls'].onButtonUp();
+      }, 250);
+    });
+  }
+});
 </script>
       
 <a-scene scene-setup loading-screen="enabled: false" embedded physics="debug: true" style="height: 100vh; width: 100vw" responsive="maxPixelRatio: 2">
