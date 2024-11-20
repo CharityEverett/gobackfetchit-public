@@ -474,35 +474,36 @@ AFRAME.registerComponent('teleport-button', {
   <button id="enterFS" style="padding: 10px; margin: 5px;">Full Screen</button>
 </div>
 
-    <script>
-    function openWikipedia(projection) {
-  const wikipediaPages = {
-    armadillo: "https://en.wikipedia.org/wiki/Armadillo_projection",
-    berghaus: "https://en.wikipedia.org/wiki/Berghaus_star_projection",
-    collignon: "https://en.wikipedia.org/wiki/Collignon_projection",
-    "conic-equal-area": "https://en.wikipedia.org/wiki/Lambert_cylindrical_equal-area_projection",
-    craig: "https://en.wikipedia.org/wiki/Craig_retroazimuthal_projection",
-    cylindricalEqualArea: "https://en.wikipedia.org/wiki/Cylindrical_equal-area_projection",
-    gingery: "https://en.wikipedia.org/wiki/Gingery_projection",
-    hammerRetroazimuthal: "https://en.wikipedia.org/wiki/Hammer_retroazimuthal_projection",
-    healpix: "https://en.wikipedia.org/wiki/HEALPix",
-    mercator: "https://en.wikipedia.org/wiki/Mercator_projection",
-    orthographic: "https://en.wikipedia.org/wiki/Orthographic_projection_in_cartography",
-    bonne: "https://en.wikipedia.org/wiki/Bonne_projection"
-  };
+   <script>
+  function openWikipedia(projection) {
+    const wikipediaPages = {
+      armadillo: "https://en.wikipedia.org/wiki/Armadillo_projection",
+      berghaus: "https://en.wikipedia.org/wiki/Berghaus_star_projection",
+      collignon: "https://en.wikipedia.org/wiki/Collignon_projection",
+      "conic-equal-area": "https://en.wikipedia.org/wiki/Lambert_cylindrical_equal-area_projection",
+      craig: "https://en.wikipedia.org/wiki/Craig_retroazimuthal_projection",
+      cylindricalEqualArea: "https://en.wikipedia.org/wiki/Cylindrical_equal-area_projection",
+      gingery: "https://en.wikipedia.org/wiki/Gingery_projection",
+      hammerRetroazimuthal: "https://en.wikipedia.org/wiki/Hammer_retroazimuthal_projection",
+      healpix: "https://en.wikipedia.org/wiki/HEALPix",
+      mercator: "https://en.wikipedia.org/wiki/Mercator_projection",
+      orthographic: "https://en.wikipedia.org/wiki/Orthographic_projection_in_cartography",
+      bonne: "https://en.wikipedia.org/wiki/Bonne_projection"
+    };
 
-  const url = wikipediaPages[projection] || "https://en.wikipedia.org/wiki/Map_projection";
-  window.open(url, '_blank');
-}
-    //Embed Vimeo Player
-  <script>
-    fetch('https://vimeo.com/api/oembed.json?url=https://vimeo.com/1031314721')
-      .then(response => response.json())
-      .then(data => {
-        // Use the data here
-        const iframe = document.getElementById('vimeo-player');
-        iframe.setAttribute('src', data.html.match(/src="([^"]+)"/)[1]);
-      });
-  </script>
+    const url = wikipediaPages[projection] || "https://en.wikipedia.org/wiki/Map_projection";
+    window.open(url, '_blank');
+  }
+</script>
+
+<!-- Embed Vimeo Player -->
+<script>
+  fetch('https://vimeo.com/api/oembed.json?url=https://vimeo.com/1031314721')
+    .then(response => response.json())
+    .then(data => {
+      const iframe = document.getElementById('vimeo-player');
+      iframe.setAttribute('src', data.html.match(/src="([^"]+)"/)[1]);
+    });
+</script>
 </body>
 </html>
