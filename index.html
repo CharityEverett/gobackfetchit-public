@@ -8,7 +8,7 @@
     <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
     <script src="components/fluid-frame.js"></script>
     <script src="components/device-detection.js"></script>
-  <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script> 
+    <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
     <script src="https://unpkg.com/aframe-responsive-component@0.1.0/dist/aframe-responsive-component.min.js"></script>
     <script src="https://unpkg.com/aframe-teleport-controls/dist/aframe-teleport-controls.min.js"></script>
@@ -244,7 +244,7 @@ AFRAME.registerComponent('teleport-button', {
 
   <!-- InvertMigration Visualization -->
 <a-entity id="visualization-wall" position="-7.9 1.5 20" rotation="0 90 0">
-  <a-plane class="visualization-image" position="0 0 0" width="14" height="10.5" src="#viz1" material="shader: gif; src: #viz1""></a-plane>
+  <a-plane class="visualization-image" position="0 0 0" width="14" height="10.5" src="#viz1" material="shader: gif"></a-plane>
   <a-entity position="0 0 0.01" geometry="primitive: plane; width: 14; height: 10.5" material="opacity: 0" class="clickable" onclick="window.open('https://en.wikipedia.org/wiki/Recent_African_origin_of_modern_humans', '_blank')"></a-entity>
 </a-entity>
 
