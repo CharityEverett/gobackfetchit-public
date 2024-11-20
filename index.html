@@ -12,8 +12,8 @@
     <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
     <script src="https://unpkg.com/aframe-responsive-component@0.1.0/dist/aframe-responsive-component.min.js"></script>
     <script src="https://unpkg.com/aframe-teleport-controls/dist/aframe-teleport-controls.min.js"></script>
-    <script src="https://player.vimeo.com/api/player.js"></script>
-
+    <script src="https://unpkg.com/aframe-youtube-component@3.0.1/dist/aframe-youtube-component.min.js"></script>
+    
 <!-- Define asset load error function -->
     <script>      
     function assetLoadError(asset) {
@@ -408,7 +408,13 @@ AFRAME.registerComponent('teleport-button', {
   
 <!-- Video on Cave Wall -->
 <a-entity id="video-wall" position="7.9 1.5 59.9" rotation="0 -90 0">
-  <a-iframe id="vimeo-player" width="14" height="7.875" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></a-iframe>
+  <a-youtube
+    width="14"
+    height="7.875"
+    src="https://youtu.be/NkM8KP9_pHc"
+    autoplay="true"
+    loop="true"
+  ></a-youtube>
 </a-entity>
   
              </a-entity>
@@ -496,14 +502,5 @@ AFRAME.registerComponent('teleport-button', {
   }
 </script>
 
-<!-- Embed Vimeo Player -->
-<script>
-  fetch('https://vimeo.com/api/oembed.json?url=https://vimeo.com/1031314721')
-    .then(response => response.json())
-    .then(data => {
-      const iframe = document.getElementById('vimeo-player');
-      iframe.setAttribute('src', data.html.match(/src="([^"]+)"/)[1]);
-    });
-</script>
 </body>
 </html>
