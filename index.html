@@ -148,28 +148,34 @@
     const loadingScreen = document.getElementById('custom-loader');
     const loadingGif = document.getElementById('loading-gif');
 
-    function getGifDuration(gif) {
-        return new Promise(resolve => {
-            gif.addEventListener('load', function() {
-                // Assume 5 seconds if duration can't be determined
-                resolve(typeof gif.duration !== 'undefined' ? gif.duration / 1000 : 5);
-            });
-        });
-    }
+document.addEventListener('DOMContentLoaded', function() {
+  const loadingScreen = document.getElementById('custom-loader');
+  const loadingGif = document.getElementById('loading-gif');
 
-    function hideLoadingScreen() {
-        loadingScreen.style.display = 'none';
-    }
-
-    Promise.all([
-        getGifDuration(loadingGif),
-        new Promise(resolve => {
-            document.querySelector('a-scene').addEventListener('loaded', resolve);
-        })
-    ]).then(([gifDuration]) => {
-        setTimeout(hideLoadingScreen, gifDuration * 1000);
+  function getGifDuration(gif) {
+    return new Promise(resolve => {
+      gif.addEventListener('load', function() {
+        // Assume 5 seconds if duration can't be determined
+        resolve(typeof gif.duration !== 'undefined' ? gif.duration / 1000 : 5);
+      });
     });
+  }
 
+  function hideLoadingScreen() {
+    loadingScreen.style.display = 'none';
+  }
+
+  if (loadingScreen && loadingGif) {
+    Promise.all([
+      getGifDuration(loadingGif),
+      new Promise(resolve => {
+        document.querySelector('a-scene').addEventListener('loaded', resolve);
+      })
+    ]).then(([gifDuration]) => {
+      setTimeout(hideLoadingScreen, gifDuration * 1000);
+    });
+  }
+});
 
   
 AFRAME.registerComponent('teleport-button', {
@@ -401,7 +407,7 @@ AFRAME.registerComponent('teleport-button', {
 </a-entity>
   
 <!-- Video on Cave Wall -->
-<a-entity id="visualization-wall" position="7.9 1.5 59.9" rotation="0 -90 0">
+<a-entity id="video-wall" position="7.9 1.5 59.9" rotation="0 -90 0">
   <a-iframe id="vimeo-player" width="14" height="7.875" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></a-iframe>
 </a-entity>
   
