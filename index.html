@@ -489,14 +489,14 @@
   window.open(url, '_blank');
 }
     //Embed Vimeo Player
-<script>
-fetch('https://vimeo.com/api/oembed.json?url=https://vimeo.com/1031314721')
-  .then(response => response.json())
-  .then(data => {
-    // Use the data here
-    const iframe = document.getElementById('vimeo-player');
-    iframe.setAttribute('src', data.html.match(/src="([^"]+)"/)[1]);
-  });
-</script>
-  </body>
+  <script>
+    fetch('https://vimeo.com/api/oembed.json?url=https://vimeo.com/1031314721')
+      .then(response => response.json())
+      .then(data => {
+        // Use the data here
+        const iframe = document.getElementById('vimeo-player');
+        iframe.setAttribute('src', data.html.match(/src="([^"]+)"/)[1]);
+      });
+  </script>
+</body>
 </html>
