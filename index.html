@@ -242,17 +242,6 @@ AFRAME.registerComponent('teleport-button', {
 <a-plane position="28 -2.25 0" width="3" height="0.5" color="black"></a-plane>
 <a-plane position="32 -2.25 0" width="3" height="0.5" color="black"></a-plane>
 
-  <!-- InvertMigration Visualization -->
-<a-entity id="visualization-wall" position="-7.9 1.5 20" rotation="0 90 0">
-    <a-plane class="visualization-image"
-             position="0 0 0"
-             width="14"
-             height="10.5"
-             material="shader: gif; src: #viz1"></a-plane>
-    <a-entity position="0 0 0.01" geometry="primitive: plane; width: 14; height: 10.5" material="opacity: 0" class="clickable" onclick="window.open('https://en.wikipedia.org/wiki/Recent_African_origin_of_modern_humans', '_blank')"></a-entity>
-</a-entity>
-
-
 
   <!-- Font Asset -->
     <a-asset-item id="varela-round-font" src="assets/VarelaRound-Regular.ttf"></a-asset-item>a-asset-item>
@@ -333,7 +322,7 @@ AFRAME.registerComponent('teleport-button', {
   <!-- End of the cave -->
   <a-plane position="0 0 60" rotation="0 180 0" width="16" height="5" color="#D3D3D3" static-body></a-plane>
 
-   <!-- Projection Wall -->
+   <!-- Projection Wall 1 -->
 <a-entity id="projection-wall" position="7.9 1.5 0" rotation="0 -90 0">
   
   <!-- Armadillo Projection -->
@@ -366,8 +355,13 @@ AFRAME.registerComponent('teleport-button', {
   <a-plane class="projection-image" position="14 -0.5 0" width="4.5" height="3" src="#cylindricalEqualArea" data-projection="cylindricalEqualArea"></a-plane>
    <a-image position="14 -2.25 0.01" width="3" height="0.6" src="#cylindrical-equal-area-nameplate"></a-image>
     <a-entity event-set__click="_event: click; _target: #link-cylindricalEqualarea; scale: 1;"></a-entity>
-  
-  <!-- Gingery Projection -->
+   
+
+</a-entity>
+
+     <!-- Projection Wall 2 -->
+<a-entity id="visualization-wall" position="-7.9 1.5 20" rotation="0 90 0">
+    <!-- Gingery Projection -->
   <a-plane class="projection-image" position="-7.9 0.5 10" rotation="0 90 0" width="4.5" height="3" src="#gingery" data-projection="gingery"></a-plane>
    <a-image position="20 -2.25 0.01" width="3" height="0.6" src="#gingery-nameplate"></a-image>
     <a-entity event-set__click="_event: click; _target: #link-gingery; scale: 1;"></a-entity>
@@ -396,13 +390,9 @@ AFRAME.registerComponent('teleport-button', {
   <a-plane class="projection-image" position="-7.9 0.5 10" rotation="0 90 0" width="4.5" height="3" src="#bonne" data-projection="bonne"></a-plane>
     <image position=50 -2 .01 width='3' height='.6' src="#bonne-nameplate"></image> 
     <a-entity event-set__click="_event: click; _target: #link-bonne; scale: 1;"></a-entity>
-</a-entity>
+</a-entity> 
    
-  <!-- Invert Migration Visualization -->
-  <a-plane class="visualization-image" position="-7.9 0.5 10" rotation="0 90 0" width="45" height="3" src="#viz1" data-visualization="InvertMigration"></a-plane>
-  <a-entity event-set__click="_event: click; _target: #link-invert-migration; scale: 1;"></a-entity>
 </a-entity>
-  
   
              </a-entity>
       </a-entity>
