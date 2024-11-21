@@ -199,8 +199,8 @@ AFRAME.registerComponent('teleport-button', {
 
     <!-- Visualizations -->
   <img id="loading-gif" src="assets/AdamandEve.gif" alt="Loading..." crossorigin="anonymous" onerror="assetLoadError(this)">
-  <img id="viz1" crossorigin="anonymous" src="https://cdn.glitch.global/5cfc02c2-e08f-4e29-9383-05c3fa57335f/InvertMigration.gif?v=1732070321400" />
-  <!-- Map Projections -->  
+  <img id="viz1" crossorigin="anonymous" src="https://cdn.glitch.global/5cfc02c2-e08f-4e29-9383-05c3fa57335f/Africa%20True%20Size%20Viz.png?v=1732208406218" />
+      <!-- Map Projections -->  
   <img id="armadillo" src="assets/map-projections/armadillo.png">
   <img id="berghaus" src="assets/map-projections/berghaus.png">
   <img id="bonne" src="assets/map-projections/bonne.png">
@@ -328,7 +328,7 @@ AFRAME.registerComponent('teleport-button', {
 <a-box class="collidable" position="0 2.5 20" rotation="90 0 0" width="16" height="80" depth="0.1" color="#FFFFFF" static-body></a-box>
       
   <!-- Start of the cave (entrance) -->
-  <a-plane position="0 0 -20" rotation="0 0 0" width="16" height="5" color="#D3D3D3" static-body></a-plane>
+  <a-plane class="projection-image" position="0 0 -20" rotation="0 0 0" width="16" height="5" src="#trueSize" data-projection="trueSize"></a-plane>
 
   <!-- End of the cave -->
   <a-plane position="0 0 60" rotation="0 180 0" width="16" height="5" color="#D3D3D3" static-body></a-plane>
@@ -469,7 +469,8 @@ AFRAME.registerComponent('teleport-button', {
       healpix: "https://en.wikipedia.org/wiki/HEALPix",
       mercator: "https://en.wikipedia.org/wiki/Mercator_projection",
       orthographic: "https://en.wikipedia.org/wiki/Orthographic_projection_in_cartography",
-      bonne: "https://en.wikipedia.org/wiki/Bonne_projection"
+      bonne: "https://en.wikipedia.org/wiki/Bonne_projection",
+      trueSize: "https://en.wikipedia.org/wiki/List_of_map_projections"
     };
 
     const url = wikipediaPages[projection] || "https://en.wikipedia.org/wiki/Map_projection";
